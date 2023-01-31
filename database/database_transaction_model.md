@@ -6,6 +6,8 @@ Hal pertama yang (seharusnya) kita lakukan biasanya adalah menentukan model tran
 
 Model transaksi database itu (_database transaction model_) sendiri adalah sebuah kumpulan aturan yang mendefinisikan dan menentukan bagaimana database mengatur, menyimpan, dan memanipulasi data. Nah, pada dasarnya ada 2 macam model yang dikenal dalam _database transaction model_ yaitu ACID dan BASE. 
 
+![Teorema CAP/Brewer](/attachments_db_articles/dbtrxmodel-cap.png "Teorema CAP/Brewer").
+
 Dalam Teorema Brewer/CAP terkait arsitektur sistem terdistribusi (_distributed system_), kita tidak mungkin mencapai _consistency_ plus _availability_ dalam sebuah sistem terdistribusi yang _partition tolerant_. Pilihannya hanya: 
 - _consistency_ + _partition tolerant_, atau 
 - _availability_ + _partition tolerant_.
@@ -14,13 +16,13 @@ Sebuah _partition_ adalah putusnya komunikasi dalam sebuah _distributed system_-
 
 Nah perbedaan mendasar antara model database ACID dan BASE adalah cara mereka mengatasi limitasi kondisi di atas.
 
-
 ## ACID database transaction model
+![ACID db trancation model](/attachments_db_articles/dbtrxmodel-acid.png "ACID db trancation model").
 #### - Atomic
 Setiap transaksi yang terjadi ini harus __SUKSES SEMUA__ atau __GAGAL SEMUA__. Hal ini akan memastikan semua data yang ada dalam database valid.
 
 #### - Consistentcy
-Transaksi yang diproses tidak akan membahayakan integritas struktural database. Termasuk di dalamnya adalah semua _rules_, _constraints_ serta _triggers_. Jika ada data yang kondisinya tidak sesuai (_illegal state_) maka transaksi tersebut akan gagal.
+Transaksi yang diproses tidak akan membahayakan integritas struktural database. Termasuk di dalamnya semua _rules_, _constraints_ serta _triggers_. Jika ada data yang kondisinya tidak sesuai (_illegal state_) maka transaksi tersebut akan gagal.
 
 #### - Isolation
 Isolasi di sini terkait dengan kegagalan dalam satu transaksi tidak boleh mempengaruhi transaksi lainnya. Sejauh mana efek sebuah transaksi dapat dipengaruhi oleh transaksi lainnya.
@@ -33,6 +35,7 @@ Data yang terkait dengan transaksi yang selesai akan tetap ada meskipun ada gang
 Untuk _usecase_, institusi keuangan atau transaksi finansial hampir semuanya pasti menggunakan ACID database. Karena transaksi keuangan sangat tergantung dengan _atomic_-nya ACID.
 
 ## BASE database transaction model
+![BASE db trancation model](/attachments_db_articles/dbtrxmodel-base.png "BASE db trancation model").
 BASE fokus pada _high availability_.
 
 #### - Basically Available
