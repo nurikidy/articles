@@ -354,5 +354,4 @@ Referensi:
 - [Domain-Specific Languages, _Martin Fowler, Rebecca Parsons_]()
 - [The ThoughtWorks Anthology, 2008](https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Pragmatic%20Programmers/The%20ThoughtWorks%20Anthology.pdf)
 
-- https://williamdurand.fr/2013/06/03/object-calisthenics/
 
