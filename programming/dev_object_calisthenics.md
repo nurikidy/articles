@@ -351,9 +351,7 @@ InventoryRow row12 = ciko.find12thRow();
 **9. No Getters/Setters/Properties**
 Dikenal juga sebagai "_Tell, Dont Ask!_" .
 
-Jika merujuk pada Martin Fowler, object-orientation adalah tentang membungkus data dengan kumpulan fungsi yang melakukan operasi atas data tersebut. Oleh karena itu pada "Tell, don't ask"
-
-Itu istilah yang sering digunakan oleh Aru maupun Venky di kelas DevChampion untuk menyederhanakan aturan nomor 9 ini.  
+Jika merujuk pada Martin Fowler, object-orientation adalah tentang membungkus data dengan kumpulan fungsi yang melakukan operasi atas data tersebut. 
 
 Sebenarnya mungkin nggak apa-apa juga sih pake _accessors_ (getter/setter/properties) untuk mendapatkan state dari sebuah obyek, selama kita tidak menggunakan hasilnya untuk menentukan kondisi atau keputusan di luar domain obyek tersebut. Di sisi lain, _getter/setter_ juga berpotensi menimbulkan celah keamanan.
 
@@ -364,4 +362,5 @@ Referensi:
 - [Domain-Specific Languages, _Martin Fowler, Rebecca Parsons_, 2010](https://martinfowler.com/books/dsl.html)
 - [TellDontAsk, _Martin Fowler_, 2013](https://martinfowler.com/bliki/TellDontAsk.html)
 - [Why getter and setter methods are evil, _Allen Holub_, 2003](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
+- https://www.elegantobjects.org/
 - [The ThoughtWorks Anthology, 2008](https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Pragmatic%20Programmers/The%20ThoughtWorks%20Anthology.pdf)
