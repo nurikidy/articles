@@ -365,5 +365,3 @@ Referensi:
 - [TellDontAsk, _Martin Fowler_, 2013](https://martinfowler.com/bliki/TellDontAsk.html)
 - [Why getter and setter methods are evil, _Allen Holub_, 2003](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
 - [The ThoughtWorks Anthology, 2008](https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Pragmatic%20Programmers/The%20ThoughtWorks%20Anthology.pdf)
-
-
