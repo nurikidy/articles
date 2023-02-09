@@ -361,7 +361,7 @@ Sebenarnya mungkin nggak apa-apa juga sih pake _accessors_ (getter/setter/proper
 Referensi:
 - [Chapter 6: Object Calisthenics by Jeff Bay, The ThoughtWorks Anthology, 2008](https://www.amazon.com/ThoughtWorks-Anthology-Technology-Innovation-Programmers/dp/193435614X)
 - [Refactoring: Improving the Design of Existing Code, _Martin Fowler_](https://martinfowler.com/books/refactoring.html)
-- [Domain-Specific Languages, _Martin Fowler, Rebecca Parsons_]()
+- [Domain-Specific Languages, _Martin Fowler, Rebecca Parsons_, 2010](https://martinfowler.com/books/dsl.html)
 - [TellDontAsk, _Martin Fowler_, 2013](https://martinfowler.com/bliki/TellDontAsk.html)
 - [Why getter and setter methods are evil, _Allen Holub_, 2003](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
 - [The ThoughtWorks Anthology, 2008](https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Pragmatic%20Programmers/The%20ThoughtWorks%20Anthology.pdf)
