@@ -6,7 +6,7 @@ Hal pertama yang (seharusnya) kita lakukan biasanya adalah menentukan model tran
 
 Model transaksi database itu (_database transaction model_) sendiri adalah sebuah kumpulan aturan yang mendefinisikan dan menentukan bagaimana database mengatur, menyimpan, dan memanipulasi data. Nah, pada dasarnya ada 2 macam model yang dikenal dalam _database transaction model_ yaitu ACID dan BASE. 
 
-![Teorema CAP/Brewer](/attachments_db_articles/dbtrxmodel-cap.png "Teorema CAP/Brewer").
+![Teorema CAP/Brewer](attachments_db_articles/dbtrxmodel-cap.png "Teorema CAP/Brewer").
 
 Dalam Teorema Brewer/CAP terkait arsitektur sistem terdistribusi (_distributed system_), kita tidak mungkin mencapai _consistency_ plus _availability_ dalam sebuah sistem terdistribusi yang _partition tolerant_. Pilihannya hanya: 
 - _consistency_ + _partition tolerant_, atau 
@@ -64,11 +64,11 @@ No. | Parameters | ACID | BASE |
 7. | Implementation | Easy to implement | Difficult to implement |
 8. | Upgradation | Difficult to upgrade | Easy to upgrade |
 9. | Focus | Focuses on Commit | Focuses on Best Efforts |
-10. | Database Type | Robust database | Simple database |
+10.| Database Type | Robust database | Simple database |
 11. | Joins and Relationship | Expensive Joins and Relationship | Free from joins and Relationship |
-12.  | Time | Require less time for completion | Require more time for completion |
-13.  | Concurrency scheme | Nested Transactions | Approximated Answers |
-14.  | Code Type | Simple code | Harder code |
+12.| Time | Require less time for completion | Require more time for completion |
+13.| Concurrency scheme | Nested Transactions | Approximated Answers |
+14.| Code Type | Simple code | Harder code |
 
 
 
