@@ -349,11 +349,22 @@ InventoryRow row7 = cika.find7thRow();
 InventoryRow row12 = ciko.find12thRow();
 
 **9. No Getters/Setters/Properties**
-Dikenal juga sebagai "_Tell, Dont Ask!_" .
+Analogi yang sering digunakan untuk ini adalah "_Tell, Dont Ask!_".
 
-Jika merujuk pada Martin Fowler, object-orientation adalah tentang membungkus data dengan kumpulan fungsi yang melakukan operasi atas data tersebut. 
+Kenapa?
 
-Sebenarnya mungkin nggak apa-apa juga sih pake _accessors_ (getter/setter/properties) untuk mendapatkan state dari sebuah obyek, selama kita tidak menggunakan hasilnya untuk menentukan kondisi atau keputusan di luar domain obyek tersebut. Di sisi lain, _getter/setter_ juga berpotensi menimbulkan celah keamanan.
+Ada kelompok yang berpendapat bahwa "getter and setter methods are evil". Hal ini terjadi karena getter/setter dianggap bermasalah karena melanggar prinsip enkapsulasi itu sendiri. Sedangkan enkapsulasi adalah konsep fundamental dalam pembrogram berbasis obyek.
+
+Enkapsulasi mengacu pada gagasan bahwa detail internal suatu obyek harus disembunyikan dari dunia luar, dan bahwa obyek hanya menyediakan antarmuka/interface publik yang terdefinisi dengan baik untuk berinteraksi dengan detail tersebut.
+
+Sementara getter/setter, yang memperbolehkan kode eksternal untuk mengakses bahkan memodifikasi secara langsung state/kondisi internal dari sebuah obyek, dapat merusak prinsip enkapsulasi ini. Hal ini juga akan mempersulit proses refaktor yang mungkin dibutuhkan ke depannya.
+
+Selain itu, beberapa pihak juga berarguman bahwa getter/setter ini seakan mendorong/mempromosikan kondisi "getter/setter mentality" di mana obyek diperlakukan seperti sebuah kontainer data dari pada obyek penuh yang punya perilaku dan tanggung jawab sebagai mana mestinya dalam konsep OOP. Kondisi ini akan mengakibatkan kode program kita menjadi kurang ekspresif dan juga tidak akan mudah untuk dikelola/dipertahankan ke depannya.
+
+Perlu dicatat, ini hanya pendapat sebagaian kelompok programmer saja dan bukan sebuah hal yang mutlak. Kelompok lain berpendapat getter/setter ini berguna dan diperlukan dalam situasi tertentu, seperti saat menangani struktur data yang dapat berubah atau saat menerapkan pola desain tertentu. Jadi semua kembali ke ke usecase serta implementasinya.
+
+Jadi kalian ikut aliran yang mana? Hehehehe
+
 
 
 Referensi:
@@ -364,3 +375,64 @@ Referensi:
 - [Why getter and setter methods are evil, _Allen Holub_, 2003](https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html)
 - https://www.elegantobjects.org/
 - [The ThoughtWorks Anthology, 2008](https://theswissbay.ch/pdf/Gentoomen%20Library/Programming/Pragmatic%20Programmers/The%20ThoughtWorks%20Anthology.pdf)
+
+-----
+
+
+However, it's important to note that not all developers agree with these criticisms of getter and setter methods. Many developers find them to be a useful and necessary tool in certain situations, such as when dealing with mutable data structures or when implementing certain design patterns. Ultimately, the use of getter and setter methods will depend on the specific context and needs of the project at hand.
+
+
+Jika merujuk pada Martin Fowler, object-orientation adalah tentang membungkus data dengan kumpulan fungsi yang melakukan operasi atas data tersebut. 
+
+Sebenarnya mungkin nggak apa-apa juga sih pake _accessors_ (getter/setter/properties) untuk mendapatkan state dari sebuah obyek, selama kita tidak menggunakan hasilnya untuk menentukan kondisi atau keputusan di luar domain obyek tersebut. 
+
+Getter-setter sendiri sebenarnya bukan celah keamanan secara langsung. Tapi kalau digunakan secara tidak tepat, hal ini memang berpotensi meningkatkan risiko celah keamanan. Contoh, jika setter tidak melakukann validasi input dengan benar maka potensi SQL Injection atau XSS dapat terjadi.
+
+Kemudian jika getter-setter digunakan untuk mengakses data sensitif (password, kredensial, PII, finansial) sementara data sumbernya sendiri tidak mempunyai mekanisme keamanan yang mumpuni, maka bisa berpotensi menjadi celah kebocoran data.
+
+Jadi yang perlu dititik beratkan adalah kita harus selalu sadar, mengerti akan segala implikasi keamanan akan kode yang kita tulis termasuk terkait dengan getter-setter ini. Kita harus selalu melakukan validasi input, mengamankan data-data sensitif dan memahamo potensi celah-celah kemanan lainnya saat menggunakan getter-setter.
+
+
+-----
+
+The phrase "getter and setter methods are evil" is a controversial one and refers to the belief that getters and setters can lead to bad code design. This belief is based on several factors:
+
+Increased Coupling: Getters and setters tightly couple the implementation details of a class with its public interface. This makes it harder to change the implementation of a class without affecting other parts of the code.
+
+Increased Complexity: Getters and setters can lead to code bloat, making classes more complex and harder to understand.
+
+Decreased Readability: Getters and setters can make code more verbose and harder to read, making it more difficult to understand the logic of a class.
+
+Breaks Encapsulation: Encapsulation is a key principle of object-oriented programming, and getters and setters can break this principle by exposing implementation details to the outside world.
+
+Reduced Performance: Getters and setters can have a negative impact on performance, especially in large or complex systems.
+
+However, it's important to note that getters and setters have their place in certain situations. For example, they can be useful in cases where you need to enforce constraints on data, or when you need to perform an action whenever a value is set.
+
+The key is to use getters and setters judiciously and to be mindful of their potential downsides. If you find that your code relies heavily on getters and setters, it may be a sign that your design could benefit from refactoring.
+
+-----
+
+There is a school of thought in programming that believes getter and setter methods are "evil" or at least undesirable because they can lead to a number of issues. Here are a few reasons why some people might hold this view:
+
+Encapsulation violation: Getters and setters can break encapsulation by exposing the internal state of an object. This can lead to coupling between different parts of the program and make it harder to change the implementation of the class without affecting other parts of the program.
+
+Excessive complexity: When a class has a large number of getters and setters, it can become difficult to understand and maintain. This can make the code harder to read and lead to bugs or other issues.
+
+Inefficient: Getters and setters can be less efficient than simply accessing the fields directly, especially if they perform additional logic or validation.
+
+Dependency injection issues: Some dependency injection frameworks rely on the use of public setters to inject dependencies into objects, which can lead to issues with encapsulation and make it harder to reason about the program's behavior.
+
+That said, not everyone agrees with this viewpoint, and there are certainly cases where getters and setters are appropriate and useful. Ultimately, the decision of whether or not to use them depends on the specific requirements of the project and the preferences of the development team.
+
+----
+
+Some people believe that getter and setter methods can be problematic because they can violate the principle of encapsulation, which is a fundamental concept in object-oriented programming.
+
+Encapsulation refers to the idea that the internal details of an object should be hidden from the outside world, and that the object should only provide well-defined public interfaces for interacting with those details.
+
+Getter and setter methods, by allowing external code to access and modify the internal state of an object directly, can undermine this principle of encapsulation. They can make it harder to reason about how an object's internal state is being used and changed, and can make it more difficult to maintain and refactor code in the future.
+
+In addition, some people argue that getter and setter methods can encourage a "getter/setter mentality" in which objects are treated more like data containers than fully-fledged objects with behavior and responsibilities. This can lead to code that is less expressive and less maintainable in the long run.
+
+However, it's important to note that not all developers agree with these criticisms of getter and setter methods. Many developers find them to be a useful and necessary tool in certain situations, such as when dealing with mutable data structures or when implementing certain design patterns. Ultimately, the use of getter and setter methods will depend on the specific context and needs of the project at hand.
